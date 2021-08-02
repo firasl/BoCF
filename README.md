@@ -67,12 +67,15 @@ Note2: Don't stop the code in the middle of this step. In case the code was stop
 
 # Results
 
-
+The numirical results of the different approaches on INTEL-TAU datasets. We report the different statistics of the Recovery and Reproduction errors using the 10-fold cross validation protocol. 
 <p align="center">
-  <img src="figures/results_table.png" width="900"  title="Optional title">
+  <img src="figures/results_table.png" width="900">
 </p>
 
-
+We also provide some visual results of **BoCF** on three samples from INTEL-TAU. From left to right,  the input image, the corrected images with **BoCF** method, and the ground truth image.
+<p align="center">
+  <img src="figures/samples_corrected_inteltau.jpg" width="600"  title="Optional title">
+</p>
 
 
 # Cite This Work
