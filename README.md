@@ -33,7 +33,7 @@ The project was tested in Python 3. Run `pip install -r requirements.txt` to ins
 
 **3/** Run the script  main_BoCF.py : python3 main_BoCF.py 
 
-### Walk through the main code (main_BoCF.py): 
+### Walking through the main code (main_BoCF.py): 
 
 **1/** First a dataset class is created using the paramters 
 
