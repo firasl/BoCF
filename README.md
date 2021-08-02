@@ -27,8 +27,10 @@ In this paper, we propose a novel color constancy approach, called **BoCF**, bui
 The project was tested in Python 3. Run `pip install -r requirements.txt` to install dependent packages.
 
 ### Using our codes.
-1/ Download the preprossed 1080p TIFF variant of the dataset. 
+*1/* Download the preprossed 1080p TIFF variant of the dataset. 
+
 2/ set the root path variable in main_BoCF.py to your data path, e.g., 'root_path': '/mnt/Data/Firas2/Intel_v3/processed_1080p' 
+
 3/ run the script  main_BoCF.py : python3 main_BoCF.py 
 
 ### Walk through the main code (main_BoCF.py): 
