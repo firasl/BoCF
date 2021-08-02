@@ -142,7 +142,8 @@ if __name__ == '__main__':
           'root_path': '/mnt/Data/Firas2/Intel_v3/processed_1080p'
           }
     #dataset_object
-    
+    hist_size = 150
+    attention_variant = 2
     method = 'BoCF'
     inteltau = INTEL_TAU_DATASET(**dataset_params)
     inteltau.set_subsets_splits()
@@ -190,7 +191,7 @@ if __name__ == '__main__':
 
                EPOCHS = 300
 			   #create the model:
-               model = BoCF(n_codewords = 150 , show_summary= True,attention =2) 
+               model = BoCF(n_codewords = hist_size , show_summary= True,attention =attention_variant) 
                path = path + 'attention_histogram'
                
 				#check if a trained model is there and load the weights if it is true:
