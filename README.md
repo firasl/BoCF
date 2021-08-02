@@ -1,5 +1,5 @@
-# description
-This repository provides the official implimentation of the illuminant estimation algorithm **BoCF** proposed in paper *[Bag of Color Features For Color Constancy](https://ieeexplore.ieee.org/document/9130881)*  using *[INTEL-TAU dataset](http://urn.fi/urn:nbn:fi:att:f8b62270-d471-4036-b427-f21bce32b965)*. 
+# Description
+This repository provides the official implimentation of the illuminant estimation algorithm **BoCF** proposed in paper *[Bag of Color Features For Color Constancy](https://ieeexplore.ieee.org/document/9130881)*  using *[INTEL-TAU dataset](https://ieeexplore.ieee.org/document/9371681)*. 
 
 # BoCF
 In this paper, we propose a novel color constancy approach, called **BoCF**, building upon Bag-of-Features pooling. The proposed method substantially reduces the number of parameters needed for illumination estimation. At the same time, the proposed method is consistent  with the color constancy assumption stating that global spatial information is not relevant for illumination estimation and local information (edges, etc.) is sufficient. Furthermore, **BoCF** is consistent with color constancy statistical approaches and can be interpreted as a learning-based generalization of many statistical approaches.
@@ -20,7 +20,7 @@ In this paper, we propose a novel color constancy approach, called **BoCF**, bui
 # Usage
 
 ### INTEL-TAU Dataset
-*[INTEL-TAU dataset](http://urn.fi/urn:nbn:fi:att:f8b62270-d471-4036-b427-f21bce32b965)* is an illumination estimation dataset. It is composed of 7022 scenes in total, which makes it the largest available dataset for illumination estimation research. The variety of scenes captured using three different camera models, i.e., Canon 5DSR, Nikon D810, and Sony IMX135, makes the dataset appropriate for evaluating the camera and scene invariance of the different illumination estimation techniques. 
+*[INTEL-TAU dataset](https://ieeexplore.ieee.org/document/9371681)* is the largest *[publicly available](http://urn.fi/urn:nbn:fi:att:f8b62270-d471-4036-b427-f21bce32b965)*  illumination estimation dataset. It is composed of 7022 scenes in total. The variety of scenes captured using three different camera models, i.e., Canon 5DSR, Nikon D810, and Sony IMX135, makes the dataset appropriate for evaluating the camera and scene invariance of the different illumination estimation techniques. 
 
 ### Dependencies 
 
@@ -40,11 +40,11 @@ The project was tested in Python 3. Run `pip install -r requirements.txt` to ins
     inteltau = INTEL_TAU_DATASET(**dataset_params)
     inteltau.set_subsets_splits()
 
-**2/** for each fold, we generate the split using the configuration file:
+**2/** For each fold, we generate the split using the configuration file:
 
     partition,ground_truths = inteltau.get_train__test_10folds(fold)            
 
-**3/** we augment the training and validation data relative to the current fold and save the augmented dataset relative to the fild in the aug_path. 
+**3/** We augment the training and validation data relative to the current fold and save the augmented dataset relative to the fild in the aug_path. 
 Note1:  This step is only excuted in case the augmented dataset folder does not exist.
 Note2: Don't stop the code in the middle of this step. In case the code was stopped before this step is finished, the aug_path folder needs to be deleted manually. 
 
@@ -66,7 +66,7 @@ Note2: Don't stop the code in the middle of this step. In case the code was stop
      test_model(model,partition['test'],ground_truths['test'],method,path,result_path)
 
 
-# Cite this work
+# Cite This Work
 
 ```
 @article{laakom2020bag,
@@ -76,6 +76,16 @@ Note2: Don't stop the code in the middle of this step. In case the code was stop
   volume={29},
   pages={7722--7734},
   year={2020},
+  publisher={IEEE}
+}
+
+@article{laakom2021intel,
+  title={Intel-tau: A color constancy dataset},
+  author={Laakom, Firas and Raitoharju, Jenni and Nikkanen, Jarno and Iosifidis, Alexandros and Gabbouj, Moncef},
+  journal={IEEE Access},
+  volume={9},
+  pages={39560--39567},
+  year={2021},
   publisher={IEEE}
 }
 ```
