@@ -13,5 +13,5 @@ In this paper, we propose a novel color constancy approach, called **BoCF**, bui
  To further improve the illumination estimation accuracy, we propose a novel attention mechanism for the **BoCF** model with two variants based on self-attention. In the first variant, we add an attention mechanism between the feature extraction block and the Bag of Features block. This mechanism allows the network to dynamically select parts of the image to use for estimating the illumination, while discarding the remaining parts. Thus, the network becomes robust to noise and irrelevant features. In the second variant, we add an attention mechanism on top of the histogram representation, i.e.,  between the Bag of Features block and the estimation block. In this way, we allow the network to learn to adaptively select the elements of the histogram which best encode the illuminant information. The model looks over the whole histogram after the spatial information has been discarded and generates a proper representation according the current context (histogram).
 
 <p align="center">
-  <img src="figures/TIP_ours.jpg" width="600">
+  <img src="figures/TIP_ours.jpg" width="900">
 </p>
