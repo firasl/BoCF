@@ -27,35 +27,35 @@ In this paper, we propose a novel color constancy approach, called **BoCF**, bui
 The project was tested in Python 3. Run `pip install -r requirements.txt` to install dependent packages.
 
 ### Using our codes.
-*1/* Download the preprossed 1080p TIFF variant of the dataset. 
+**1/** Download the preprossed 1080p TIFF variant of the dataset. 
 
-2/ set the root path variable in main_BoCF.py to your data path, e.g., 'root_path': '/mnt/Data/Firas2/Intel_v3/processed_1080p' 
+**2/** Set the root path variable in main_BoCF.py to your data path, e.g., 'root_path': '/mnt/Data/Firas2/Intel_v3/processed_1080p' 
 
-3/ run the script  main_BoCF.py : python3 main_BoCF.py 
+**3/** Run the script  main_BoCF.py : python3 main_BoCF.py 
 
 ### Walk through the main code (main_BoCF.py): 
 
-1/ First a dataset class is created using the paramters 
+**1/** First a dataset class is created using the paramters 
 
     inteltau = INTEL_TAU_DATASET(**dataset_params)
     inteltau.set_subsets_splits()
 
-2/ for each fold, we generate the split using the configuration file:
+**2/** for each fold, we generate the split using the configuration file:
 
     partition,ground_truths = inteltau.get_train__test_10folds(fold)            
 
-3/ we augment the training and validation data relative to the current fold and save the augmented dataset relative to the fild in the aug_path. 
+**3/** we augment the training and validation data relative to the current fold and save the augmented dataset relative to the fild in the aug_path. 
 Note1:  This step is only excuted in case the augmented dataset folder does not exist.
 Note2: Don't stop the code in the middle of this step. In case the code was stopped before this step is finished, the aug_path folder needs to be deleted manually. 
 
     augment_data(15*len(partition['train']),partition['train'],ground_truths['train'],(227,227),train_dir)    
     augment_data(5*len(partition['validation']),partition['validation'],ground_truths['validation'],(227,227),val_dir)  
 
-4/ We create a BoCF model. There are two hyper-parameters: histogram_size (default=150) and attention_variant (default=2). If attention_variant needs to be changed to 1 to use attention1 variant or 0 to test the standard approach without attention. 
+**4/** We create a BoCF model. There are two hyper-parameters: histogram_size (default=150) and attention_variant (default=2). If attention_variant needs to be changed to 1 to use attention1 variant or 0 to test the standard approach without attention. 
     
      model = BoCF(n_codewords = hist_size , show_summary= True,attention =attention_variant) 
 
-5/ Training the model and testing it using the test set
+**5/** Training the model and testing it using the test set
 
      history = model.fit_generator(generator=training_generator, epochs=EPOCHS,
                             validation_data=validation_generator,
