@@ -1,0 +1,7 @@
+h5py>=2.8.0
+scipy>=1.6 
+numpy>=1.20
+tqdm>=1.6
+tensorflow-gpu>=2.1
+Keras-Applications>=1.0.4
+opencv-python>=3.4
