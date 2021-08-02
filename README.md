@@ -53,9 +53,13 @@ Note2: Don't stop the code in the middle of this step. In case the code was stop
     
      model = BoCF(n_codewords = hist_size , show_summary= True,attention =attention_variant) 
 
-5/ Training the model and testing it using the test set.
+5/ Training the model and testing it using the test set
 
-
-
-
+     history = model.fit_generator(generator=training_generator, epochs=EPOCHS,
+                            validation_data=validation_generator,
+                            steps_per_epoch = (len(partition['train']) // train_params['batch_size']) ,                    
+                            use_multiprocessing=True, 
+                            callbacks =all_callbacks( path + '.hdf5' ),
+                            workers=4)
+     test_model(model,partition['test'],ground_truths['test'],method,path,result_path)
 
