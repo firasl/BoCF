@@ -31,7 +31,7 @@ The project was tested in Python 3. Run `pip install -r requirements.txt` to ins
 2/ set the root path variable in main_BoCF.py to your data path, e.g., 'root_path': '/mnt/Data/Firas2/Intel_v3/processed_1080p' 
 3/ run the script  main_BoCF.py : python3 main_BoCF.py 
 
-### walk through the main code (main_BoCF.py): 
+### Walk through the main code (main_BoCF.py): 
 
 1/ First a dataset class is created using the paramters 
 
@@ -63,3 +63,17 @@ Note2: Don't stop the code in the middle of this step. In case the code was stop
                             workers=4)
      test_model(model,partition['test'],ground_truths['test'],method,path,result_path)
 
+
+# Cite this work
+
+```
+@article{laakom2020bag,
+  title={Bag of color features for color constancy},
+  author={Laakom, Firas and Passalis, Nikolaos and Raitoharju, Jenni and Nikkanen, Jarno and Tefas, Anastasios and Iosifidis, Alexandros and Gabbouj, Moncef},
+  journal={IEEE Transactions on Image Processing},
+  volume={29},
+  pages={7722--7734},
+  year={2020},
+  publisher={IEEE}
+}
+```
