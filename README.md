@@ -65,6 +65,15 @@ Note2: Don't stop the code in the middle of this step. In case the code was stop
                             workers=4)
      test_model(model,partition['test'],ground_truths['test'],method,path,result_path)
 
+# Results
+
+
+<p align="center">
+  <img src="figures/results_table.png" width="900"  title="Optional title">
+</p>
+
+
+
 
 # Cite This Work
 
